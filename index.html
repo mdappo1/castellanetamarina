@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Villetta Vista Mare - Castellaneta Marina</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,184 +23,183 @@
             color: var(--deep-blue);
             margin: 0;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Gotham Typography Hierarchy */
+        /* Typography Hierarchy */
         .gotham-bold { font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
-        .gotham-medium { font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; }
-        .gotham-book { font-weight: 400; line-height: 1.8; color: #334155; }
-        .gotham-light { font-weight: 300; letter-spacing: 0.05em; }
+        .gotham-medium { font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; }
+        @media (min-width: 768px) { .gotham-medium { letter-spacing: 0.15em; } }
+        
+        .gotham-book { font-weight: 400; line-height: 1.7; color: #334155; }
+        .gotham-light { font-weight: 300; letter-spacing: 0.02em; }
 
         /* Sfondi Immersivi */
         .bg-sea-texture {
-            background: linear-gradient(to bottom, rgba(26, 54, 93, 0.85), rgba(45, 90, 110, 0.8)), 
-                        url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1920&q=80');
-            background-attachment: fixed;
+            background: linear-gradient(to bottom, rgba(26, 54, 93, 0.88), rgba(45, 90, 110, 0.85)), 
+                        url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1200&q=80');
+            background-attachment: scroll;
             background-size: cover;
+            background-position: center;
         }
+        @media (min-width: 1024px) { .bg-sea-texture { background-attachment: fixed; } }
 
         .bg-sand-texture {
-            background: linear-gradient(to bottom, rgba(249, 246, 241, 0.95), rgba(234, 221, 202, 0.8)), 
-                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(to bottom, rgba(249, 246, 241, 0.97), rgba(234, 221, 202, 0.9)), 
+                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=60');
             background-size: cover;
-            background-attachment: fixed;
         }
 
         .bg-starfish-sand {
-            background: linear-gradient(to right, rgba(255, 255, 255, 0.95), rgba(234, 221, 202, 0.2)),
-                        url('https://images.unsplash.com/photo-1510172951991-856a654063f9?auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.96), rgba(234, 221, 202, 0.3)),
+                        url('https://images.unsplash.com/photo-1510172951991-856a654063f9?auto=format&fit=crop&w=1200&q=60');
             background-size: cover;
-            background-attachment: fixed;
         }
 
         /* Image Containers */
         .photo-wrapper {
             width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             position: relative;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
             background-color: rgba(0,0,0,0.02);
+            overflow: hidden;
         }
+        @media (min-width: 768px) { .photo-wrapper { margin-bottom: 4rem; } }
 
         .photo-img {
             width: 100%;
             height: auto;
-            max-width: 100%;
             display: block;
-            object-fit: contain;
+            object-fit: cover;
         }
 
         .photo-label {
             position: absolute;
-            top: 2.5rem;
-            left: 2.5rem;
+            top: 1rem;
+            left: 1rem;
             background: rgba(255, 255, 255, 0.95);
             color: var(--deep-blue);
-            padding: 0.75rem 1.5rem;
-            font-size: 10px;
+            padding: 0.5rem 1rem;
+            font-size: 9px;
             text-transform: uppercase;
-            letter-spacing: 0.3em;
-            font-weight: 500;
+            letter-spacing: 0.15em;
+            font-weight: 600;
             border-left: 3px solid var(--sea-azure);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+        @media (min-width: 768px) {
+            .photo-label { top: 2.5rem; left: 2.5rem; font-size: 10px; letter-spacing: 0.3em; }
         }
 
         .section-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 8rem 1.5rem;
+            padding: 4rem 1.25rem;
         }
+        @media (min-width: 768px) { .section-container { padding: 8rem 1.5rem; } }
 
         .divider {
-            width: 50px;
+            width: 40px;
             height: 1px;
             background-color: var(--sea-azure);
-            margin: 2rem auto;
+            margin: 1.5rem auto;
         }
 
         /* Icon Styles */
-        .icon-huge { width: 80px; height: 80px; stroke: var(--sea-azure); stroke-width: 1; fill: none; }
+        .icon-huge { width: 48px; height: 48px; stroke: var(--sea-azure); stroke-width: 1.2; fill: none; }
+        @media (min-width: 768px) { .icon-huge { width: 80px; height: 80px; } }
+
         .icon-circle { 
-            width: 60px; height: 60px; border: 1px solid var(--warm-beige); border-radius: 50%; 
+            width: 50px; height: 50px; border: 1px solid var(--warm-beige); border-radius: 50%; 
             display: flex; align-items: center; justify-content: center; background: white;
         }
-        .icon-circle svg { width: 30px; height: 30px; stroke: var(--sea-azure); stroke-width: 1; fill: none; }
+        .icon-circle svg { width: 24px; height: 24px; stroke: var(--sea-azure); stroke-width: 1.2; fill: none; }
         
-        /* Table Styles */
-        .table-full { width: 100%; background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.05); }
-        .table-full th { background: var(--deep-blue); color: white; padding: 2.5rem 1.5rem; text-align: center; }
-        .table-full td { padding: 2rem 1.5rem; border-bottom: 1px solid var(--sand-white); text-align: center; font-size: 1.25rem; }
+        /* Table Styles Responsive */
+        .table-responsive-container {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .table-full { width: 100%; min-width: 600px; background: white; border-collapse: collapse; }
+        .table-full th { background: var(--deep-blue); color: white; padding: 1.5rem 1rem; text-align: center; white-space: nowrap; }
+        .table-full td { padding: 1.25rem 1rem; border-bottom: 1px solid var(--sand-white); text-align: center; font-size: 1.1rem; }
 
         .whatsapp-brand { fill: #25D366; width: 24px; height: 24px; }
 
-        /* --- STILI PER IMPAGINAZIONE PDF A4 --- */
+        /* Print Settings */
         @media print {
-            @page {
-                size: A4;
-                margin: 0.5cm;
-            }
-            
-            body {
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                background-color: var(--sand-white) !important;
-            }
-
-            section, .photo-wrapper, .info-card, tr, .table-full {
-                page-break-inside: avoid !important;
-                break-inside: avoid !important;
-            }
-
-            header {
-                min-height: 100vh;
-                page-break-after: always;
-            }
-
-            .section-container {
-                padding: 2rem 1rem !important;
-            }
-
-            .bg-sea-texture, .bg-sand-texture, .bg-starfish-sand {
-                background-attachment: scroll !important; /* Fix per la stampa */
-            }
+            @page { size: A4; margin: 0.5cm; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background-color: white !important; }
+            section, .photo-wrapper, tr { page-break-inside: avoid !important; }
+            header { min-height: 100vh; page-break-after: always; }
+            .bg-sea-texture, .bg-sand-texture { background-attachment: scroll !important; }
         }
     </style>
 </head>
 <body>
 
-    <header class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-sea-texture text-white">
-        <div class="mb-16">
-            <h3 class="gotham-medium text-xs md:text-sm tracking-[0.5em] mb-4 opacity-80">Soggiorni Esclusivi 2026</h3>
-            <h1 class="text-5xl md:text-8xl mb-6 tracking-tighter gotham-bold">Villetta Vista Mare</h1>
-            <h2 class="gotham-light text-sm md:text-xl tracking-[0.4em] opacity-70">La tua vacanza ideale tra mare, natura e relax</h2>
+    <!-- HERO SECTION -->
+    <header class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-sea-texture text-white">
+        <div class="mb-10 md:mb-16 w-full max-w-4xl">
+            <h3 class="gotham-medium text-[10px] md:text-sm tracking-[0.3em] md:tracking-[0.5em] mb-4 opacity-90">Soggiorni Esclusivi 2026</h3>
+            <h1 class="text-4xl md:text-8xl mb-4 md:mb-6 tracking-tighter gotham-bold leading-tight">Villetta<br class="md:hidden"> Vista Mare</h1>
+            <h2 class="gotham-light text-xs md:text-xl tracking-[0.2em] md:tracking-[0.4em] opacity-80 px-4">La tua vacanza ideale tra mare, natura e relax</h2>
             <div class="divider bg-white/40"></div>
             
-            <div class="flex justify-center gap-16 mt-12">
-                <div class="flex flex-col items-center gap-4">
-                    <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M2 22s1-1 4-1 5 2 8 2 4-1 4-1M2 19s1-1 4-1 5 2 8 2 4-1 4-1M2 16s1-1 4-1 5 2 8 2 4-1 4-1"></path></svg>
-                    <span class="gotham-medium text-[11px] tracking-[0.3em]">350 MT MARE</span>
+            <div class="flex justify-center gap-8 md:gap-16 mt-8 md:mt-12">
+                <div class="flex flex-col items-center gap-2 md:gap-4">
+                    <svg class="w-8 h-8 md:w-12 md:h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M2 22s1-1 4-1 5 2 8 2 4-1 4-1M2 19s1-1 4-1 5 2 8 2 4-1 4-1M2 16s1-1 4-1 5 2 8 2 4-1 4-1"></path></svg>
+                    <span class="gotham-medium text-[9px] md:text-[11px] tracking-[0.2em] md:tracking-[0.3em]">350 MT MARE</span>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-                    <span class="gotham-medium text-[11px] tracking-[0.3em]">350 MT CENTRO</span>
+                <div class="flex flex-col items-center gap-2 md:gap-4">
+                    <svg class="w-8 h-8 md:w-12 md:h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                    <span class="gotham-medium text-[9px] md:text-[11px] tracking-[0.2em] md:tracking-[0.3em]">350 MT CENTRO</span>
                 </div>
             </div>
         </div>
         
-        <div class="w-full max-w-6xl photo-wrapper shadow-2xl backdrop-blur-sm border-white/10">
-            <img src="copertina.jpg" alt="Villetta Castellaneta Marina" class="photo-img">
+        <div class="w-full max-w-5xl photo-wrapper shadow-2xl backdrop-blur-sm border border-white/10 rounded-sm">
+            <img src="copertina.jpg" alt="Villetta Castellaneta Marina" class="photo-img min-h-[250px] object-cover" onerror="this.src='https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1200&q=80'">
             <div class="photo-label">Benvenuti</div>
         </div>
     </header>
 
+    <!-- INTRODUZIONE -->
     <section class="bg-sand-texture">
         <div class="section-container">
-            <div class="max-w-4xl mx-auto text-center mb-32">
-                <h2 class="gotham-medium text-2xl mb-12 text-[#1A365D]">L'Esperienza</h2>
-                <div class="gotham-book text-lg space-y-8 text-gray-700 leading-loose">
+            <div class="max-w-3xl mx-auto text-center mb-16 md:mb-32">
+                <h2 class="gotham-medium text-xl md:text-2xl mb-8 md:mb-12 text-[#1A365D]">L'Esperienza</h2>
+                <div class="gotham-book text-base md:text-lg space-y-6 md:space-y-8 text-slate-700 leading-relaxed text-left md:text-center">
                     <p>Affittasi a Castellaneta Marina splendida villetta con ingresso indipendente, recentemente ristrutturata e mantenuta in condizioni impeccabili di pulizia, pronta ad accogliervi per la vostra vacanza ideale.</p>
-                    <p>Situata in <strong>Via Mare Spumeggiante 8/B</strong>, gode di una posizione invidiabile: a soli <strong>350 mt (5 minuti a piedi)</strong> sia dallo splendido lungomare e dalle spiagge, sia dal vivace centro con tutti i servizi e locali commerciali.</p>
+                    <p>Situata in <span class="text-[#1A365D] font-medium">Via Mare Spumeggiante 8/B</span>, gode di una posizione invidiabile: a soli <strong>350 mt (5 minuti a piedi)</strong> sia dallo splendido lungomare e dalle spiagge, sia dal vivace centro con tutti i servizi e locali commerciali.</p>
                     <p>La villetta, posta al secondo piano, offre <strong>6 comodi posti letto</strong> distribuiti in 3 accoglienti camere da letto.</p>
                     <p>È completamente arredata con gusto ed è dotata di zanzariere, grate di protezione alle finestre e aria condizionata per il massimo comfort. Gli interni comprendono un bagno moderno, un luminoso tinello e una cucina funzionale.</p>
-                    <p class="bg-white/40 p-6 rounded-lg border-l-4 border-[#72A0C1]">Per il divertimento di tutta la famiglia, a soli <strong>150 metri</strong> dalla villetta si trova un ampio <strong>campo giochi pubblico gratuito</strong>, perfettamente illuminato anche di notte. È un'area sicura e accessibile dove grandi e piccini possono divertirsi <strong>24 ore su 24, tutti i giorni</strong>.</p>
+                    
+                    <div class="bg-white/60 p-5 md:p-8 rounded-xl border-l-4 border-[#72A0C1] shadow-sm my-8">
+                        <p class="mb-0">Per il divertimento di tutta la famiglia, a soli <strong>150 metri</strong> dalla villetta si trova un ampio <strong>campo giochi pubblico gratuito</strong>, perfettamente illuminato anche di notte. È un'area sicura e accessibile dove grandi e piccini possono divertirsi <strong>24 ore su 24, tutti i giorni</strong>.</p>
+                    </div>
+
                     <p>Il vero punto di forza è il <strong>magnifico terrazzo superiore</strong>, coperto e attrezzato con cucina dedicata e bagno con doccia calda: lo spazio ideale per pranzi e cene all’aperto con splendida vista mare.</p>
-                    <p>All’esterno, la proprietà dispone di un curato giardino con spazio per <strong>due posti auto</strong> e una comoda <strong>doccia esterna in giardino</strong>, il cui utilizzo è consentito e consigliato al rientro dalla spiaggia.</p>
+                    <p>All’esterno, la proprietà dispone di un curato giardino con spazio per <strong>due posti auto</strong> e una comoda <strong>doccia esterna in giardino</strong>, il cui utilizzo è consigliato al rientro dalla spiaggia.</p>
                 </div>
             </div>
             
-            <div class="photo-wrapper">
+            <div class="photo-wrapper shadow-lg rounded-sm">
                 <img src="1-ingresso immobile.jpg" alt="Ingresso" class="photo-img">
                 <div class="photo-label">Foto 01 - Ingresso</div>
             </div>
         </div>
     </section>
 
-    <section class="bg-white px-6">
+    <!-- INTERNI -->
+    <section class="bg-white">
         <div class="section-container">
-            <h2 class="gotham-medium text-[30px] text-center mb-24 tracking-[0.6em] text-gray-400 uppercase">Interni & Living</h2>
-            <div class="space-y-32">
+            <h2 class="gotham-medium text-xl md:text-[30px] text-center mb-12 md:mb-24 tracking-[0.3em] md:tracking-[0.6em] text-slate-400 uppercase">Interni & Living</h2>
+            <div class="grid grid-cols-1 gap-8 md:gap-32">
                 <div class="photo-wrapper"><img src="2-soggiorno.jpg" alt="Soggiorno" class="photo-img"><div class="photo-label">Soggiorno</div></div>
                 <div class="photo-wrapper"><img src="3-soggiorno cucina.jpg" alt="Cucina" class="photo-img"><div class="photo-label">Soggiorno Cucina I</div></div>
                 <div class="photo-wrapper"><img src="4-soggiorno cucina.jpg" alt="Cucina" class="photo-img"><div class="photo-label">Soggiorno Cucina II</div></div>
@@ -209,10 +208,11 @@
         </div>
     </section>
 
-    <section class="bg-sand-texture py-32">
+    <!-- NOTTE -->
+    <section class="bg-sand-texture">
         <div class="section-container text-center">
-            <h2 class="gotham-medium text-3xl mb-24 text-[#1A365D]">Riposo e Comfort</h2>
-            <div class="space-y-32">
+            <h2 class="gotham-medium text-xl md:text-3xl mb-12 md:mb-24 text-[#1A365D]">Riposo e Comfort</h2>
+            <div class="grid grid-cols-1 gap-8 md:gap-32">
                 <div class="photo-wrapper"><img src="6-letto matrimoniale.jpg" alt="Letto" class="photo-img"><div class="photo-label">Matrimoniale I</div></div>
                 <div class="photo-wrapper"><img src="7- letto matrimoniale.jpg" alt="Letto" class="photo-img"><div class="photo-label">Matrimoniale II</div></div>
                 <div class="photo-wrapper"><img src="8- letto1.jpg" alt="Letto" class="photo-img"><div class="photo-label">Letto Singolo I</div></div>
@@ -221,253 +221,256 @@
         </div>
     </section>
 
-    <section class="bg-white py-32">
+    <!-- BAGNI -->
+    <section class="bg-white">
         <div class="section-container">
-            <h2 class="gotham-medium text-[30px] text-center mb-24 tracking-[0.6em] text-gray-400">Bagni</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <h2 class="gotham-medium text-xl md:text-[30px] text-center mb-12 md:mb-24 tracking-[0.3em] md:tracking-[0.6em] text-slate-400 uppercase">Bagni</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                 <div class="photo-wrapper"><img src="10-bagno.jpg" alt="Bagno" class="photo-img"><div class="photo-label">Bagno Interno</div></div>
                 <div class="photo-wrapper"><img src="11-bagno2.jpg" alt="Bagno" class="photo-img"><div class="photo-label">Bagno Terrazzo</div></div>
             </div>
         </div>
     </section>
 
-    <section class="bg-sea-texture text-white py-40">
+    <!-- TERRAZZO -->
+    <section class="bg-sea-texture text-white">
         <div class="section-container">
-            <div class="max-w-3xl mx-auto text-center mb-32">
-                <h2 class="gotham-medium text-4xl mb-8 text-[#EADDCA]">Terrazzo Panoramico</h2>
+            <div class="max-w-3xl mx-auto text-center mb-16 md:mb-32">
+                <h2 class="gotham-medium text-2xl md:text-4xl mb-4 md:mb-8 text-[#EADDCA]">Terrazzo Panoramico</h2>
                 <div class="divider bg-white/20"></div>
-                <p class="gotham-light opacity-80 text-xl italic leading-relaxed">"80 metri quadri di libertà affacciati sullo Ionio."</p>
+                <p class="gotham-light opacity-90 text-lg md:text-xl italic leading-relaxed">"80 metri quadri di libertà affacciati sullo Ionio."</p>
             </div>
-            <div class="space-y-32">
-                <div class="photo-wrapper bg-white/5 border-white/5"><img src="12-terrazzo.jpg" alt="Terrazzo" class="photo-img"><div class="photo-label text-black">Vista Mare</div></div>
-                <div class="photo-wrapper bg-white/5 border-white/5"><img src="13-terrazzo.jpg" alt="Terrazzo" class="photo-img"><div class="photo-label text-black">Area Dining</div></div>
-                <div class="photo-wrapper bg-white/5 border-white/5"><img src="14-terrazzo.jpg" alt="Terrazzo" class="photo-img"><div class="photo-label text-black">Cucina Esterna</div></div>
-                <div class="photo-wrapper bg-white/5 border-white/5"><img src="15-terrazzo.jpg" alt="Terrazzo" class="photo-img"><div class="photo-label text-black">Panorama</div></div>
+            <div class="grid grid-cols-1 gap-8 md:gap-32">
+                <div class="photo-wrapper bg-white/5 border border-white/5"><img src="12-terrazzo.jpg" alt="Terrazzo" class="photo-img"><div class="photo-label text-black">Vista Mare</div></div>
+                <div class="photo-wrapper bg-white/5 border border-white/5"><img src="13-terrazzo.jpg" alt="Terrazzo" class="photo-img"><div class="photo-label text-black">Area Dining</div></div>
+                <div class="photo-wrapper bg-white/5 border border-white/5"><img src="14-terrazzo.jpg" alt="Terrazzo" class="photo-img"><div class="photo-label text-black">Cucina Esterna</div></div>
+                <div class="photo-wrapper bg-white/5 border border-white/5"><img src="15-terrazzo.jpg" alt="Terrazzo" class="photo-img"><div class="photo-label text-black">Panorama</div></div>
             </div>
         </div>
     </section>
 
-    <section class="bg-starfish-sand py-40">
+    <!-- ESTERNE -->
+    <section class="bg-starfish-sand">
         <div class="section-container">
-            <h2 class="gotham-medium text-[30px] text-center mb-24 tracking-[0.6em] text-[#1A365D]/60 uppercase">Esterne & Solarium</h2>
-            <div class="space-y-32">
-                <div class="photo-wrapper shadow-2xl"><img src="16-giardino.jpg" alt="Giardino" class="photo-img"><div class="photo-label">Il Giardino</div></div>
-                <div class="photo-wrapper shadow-2xl"><img src="17-vista mare.jpg" alt="Vista" class="photo-img"><div class="photo-label">Dettaglio Vista</div></div>
+            <h2 class="gotham-medium text-xl md:text-[30px] text-center mb-12 md:mb-24 tracking-[0.3em] md:tracking-[0.6em] text-[#1A365D]/60 uppercase">Esterne & Solarium</h2>
+            <div class="grid grid-cols-1 gap-8 md:gap-32">
+                <div class="photo-wrapper shadow-xl"><img src="16-giardino.jpg" alt="Giardino" class="photo-img"><div class="photo-label">Il Giardino</div></div>
+                <div class="photo-wrapper shadow-xl"><img src="17-vista mare.jpg" alt="Vista" class="photo-img"><div class="photo-label">Dettaglio Vista</div></div>
             </div>
         </div>
     </section>
 
-    <section class="min-h-screen bg-white flex flex-col justify-center py-40 border-t border-[#EADDCA]">
-        <div class="section-container w-full">
-            <div class="text-center mb-24">
-                <h2 class="gotham-bold text-4xl mb-4 text-[#1A365D]">Posizione e Parcheggio</h2>
-                <p class="gotham-light opacity-50 uppercase tracking-widest text-2xl">Via Mare Spumeggiante 8/B</p>
+    <!-- POSIZIONE -->
+    <section class="bg-white border-t border-[#EADDCA]">
+        <div class="section-container">
+            <div class="text-center mb-12 md:mb-24">
+                <h2 class="gotham-bold text-3xl md:text-4xl mb-4 text-[#1A365D]">Posizione e Parcheggio</h2>
+                <p class="gotham-light opacity-60 uppercase tracking-widest text-lg md:text-2xl">Via Mare Spumeggiante 8/B</p>
                 <div class="divider"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-                <div class="space-y-16">
-                    <div class="flex gap-10 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-start">
+                <div class="space-y-10 md:space-y-16">
+                    <div class="flex gap-6 md:gap-10 items-start">
                         <svg class="icon-huge shrink-0" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><circle cx="12" cy="11" r="3"></circle></svg>
                         <div>
-                            <p class="gotham-bold text-2xl mb-2">350 Metri dal Mare</p>
-                            <p class="gotham-book text-lg opacity-70">Spiaggia e lungomare raggiungibili in 5 minuti a piedi.</p>
+                            <p class="gotham-bold text-xl md:text-2xl mb-2">350 Metri dal Mare</p>
+                            <p class="gotham-book text-base md:text-lg opacity-80">Spiaggia e lungomare raggiungibili in 5 minuti a piedi.</p>
                         </div>
                     </div>
-                    <div class="flex gap-10 items-center">
+                    <div class="flex gap-6 md:gap-10 items-start">
                         <svg class="icon-huge shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 12h18m-9-9v18M5 12a7 7 0 1 1 14 0 7 7 0 0 1-14 0z"></path><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
                         <div>
-                            <p class="gotham-bold text-2xl mb-2">150 Metri: Campo Giochi</p>
-                            <p class="gotham-book text-lg text-[#72A0C1] font-medium">AREA PUBBLICA ILLUMINATA 24H/24H</p>
-                            <p class="gotham-book text-base opacity-60">Gratuito per grandi e piccini, aperto tutto il giorno e la notte.</p>
+                            <p class="gotham-bold text-xl md:text-2xl mb-2">150 Metri: Campo Giochi</p>
+                            <p class="gotham-book text-base md:text-lg text-[#72A0C1] font-semibold uppercase tracking-wide">AREA PUBBLICA ILLUMINATA 24H</p>
+                            <p class="gotham-book text-sm md:text-base opacity-70">Gratuito per grandi e piccini, aperto sempre.</p>
                         </div>
                     </div>
-                    <div class="flex gap-10 items-center">
+                    <div class="flex gap-6 md:gap-10 items-start">
                         <svg class="icon-huge shrink-0" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
                         <div>
-                            <p class="gotham-bold text-2xl mb-2">350 Metri dal Centro</p>
-                            <p class="gotham-book text-lg opacity-70">Vicinanza a tutte le attività commerciali e locali del vivace centro.</p>
+                            <p class="gotham-bold text-xl md:text-2xl mb-2">350 Metri dal Centro</p>
+                            <p class="gotham-book text-base md:text-lg opacity-80">Vicinanza a tutte le attività commerciali e locali del vivace centro.</p>
                         </div>
                     </div>
-                    <div class="flex gap-10 items-center">
-                        <svg class="icon-huge shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="flex gap-6 md:gap-10 items-start">
+                        <svg class="icon-huge shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                             <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 13.1V16c0 .6.4 1 1 1h2"/>
                             <circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/>
                             <path d="M13 17h2M9 17h4"/>
                         </svg>
                         <div>
-                            <p class="gotham-bold text-2xl mb-2">Parcheggio Interno</p>
-                            <p class="gotham-book text-lg opacity-70 font-bold text-[#72A0C1]">DUE POSTI AUTO RISERVATI</p>
-                            <p class="gotham-book text-base opacity-60">All'interno del parcheggio privato recintato della villa.</p>
+                            <p class="gotham-bold text-xl md:text-2xl mb-2">Parcheggio Interno</p>
+                            <p class="gotham-book text-base md:text-lg font-bold text-[#72A0C1] uppercase tracking-wide">DUE POSTI AUTO RISERVATI</p>
+                            <p class="gotham-book text-sm md:text-base opacity-70">All'interno del parcheggio privato recintato della villa.</p>
                         </div>
                     </div>
                 </div>
-                <div class="space-y-8">
-                    <div class="photo-wrapper !mb-0 shadow-xl rounded-sm overflow-hidden">
-                        <img src="18-parcheggio.jpg" alt="Parcheggio" class="photo-img">
-                    </div>
-                    <div class="photo-wrapper !mb-0 shadow-xl rounded-sm overflow-hidden">
-                        <img src="19-strada.jpg" alt="Strada" class="photo-img">
-                    </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
+                    <div class="photo-wrapper !mb-0 shadow-lg rounded-sm"><img src="18-parcheggio.jpg" alt="Parcheggio" class="photo-img"></div>
+                    <div class="photo-wrapper !mb-0 shadow-lg rounded-sm"><img src="19-strada.jpg" alt="Strada" class="photo-img"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-sand-texture py-32">
+    <!-- VACANZA -->
+    <section class="bg-sand-texture">
         <div class="section-container">
-            <h2 class="gotham-medium text-[30px] text-center mb-24 tracking-[0.6em] text-gray-400 uppercase">La vostra vacanza</h2>
-            <div class="space-y-32">
-                <div class="photo-wrapper shadow-2xl"><img src="20-distanza dal mare.JPG" alt="Accesso" class="photo-img"><div class="photo-label">Verso il mare</div></div>
-                <div class="photo-wrapper shadow-2xl"><img src="21-distanza dal mare.JPG" alt="Percorso" class="photo-img"><div class="photo-label">Lungomare</div></div>
-                <div class="photo-wrapper shadow-2xl"><img src="22-spiaggia.jpg" alt="Spiaggia" class="photo-img"><div class="photo-label">La Spiaggia</div></div>
+            <h2 class="gotham-medium text-xl md:text-[30px] text-center mb-12 md:mb-24 tracking-[0.3em] md:tracking-[0.6em] text-slate-400 uppercase">La vostra vacanza</h2>
+            <div class="grid grid-cols-1 gap-8 md:gap-32">
+                <div class="photo-wrapper shadow-xl"><img src="20-distanza dal mare.JPG" alt="Accesso" class="photo-img"><div class="photo-label">Verso il mare</div></div>
+                <div class="photo-wrapper shadow-xl"><img src="21-distanza dal mare.JPG" alt="Percorso" class="photo-img"><div class="photo-label">Lungomare</div></div>
+                <div class="photo-wrapper shadow-xl"><img src="22-spiaggia.jpg" alt="Spiaggia" class="photo-img"><div class="photo-label">La Spiaggia</div></div>
             </div>
         </div>
     </section>
 
-    <section class="min-h-screen bg-white flex flex-col justify-center py-40 border-y border-[#EADDCA]">
+    <!-- TARIFFE -->
+    <section class="bg-white border-y border-[#EADDCA]">
         <div class="section-container">
-            <div class="text-center mb-24">
-                <h2 class="gotham-bold text-5xl mb-6 text-[#1A365D]">Tariffe Stagione 2026</h2>
-                <p class="gotham-medium text-[#72A0C1] tracking-[0.4em] text-sm uppercase">Trasparenza • Spese Incluse • Solo Privati</p>
+            <div class="text-center mb-12 md:mb-24">
+                <h2 class="gotham-bold text-3xl md:text-5xl mb-4 md:mb-6 text-[#1A365D]">Tariffe Stagione 2026</h2>
+                <p class="gotham-medium text-[#72A0C1] tracking-[0.2em] md:tracking-[0.4em] text-[10px] md:text-sm uppercase">Trasparenza • Spese Incluse • Solo Privati</p>
                 <div class="divider"></div>
             </div>
             
-            <div class="table-full overflow-hidden">
-                <table class="w-full">
+            <div class="table-responsive-container">
+                <table class="table-full">
                     <thead>
                         <tr>
-                            <th class="gotham-medium text-base">Mese</th>
-                            <th class="gotham-medium text-base border-l border-white/10">1ª Quindicina <br><span class="opacity-50 text-[10px] font-light">(01-15)</span></th>
-                            <th class="gotham-medium text-base border-l border-white/10">2ª Quindicina <br><span class="opacity-50 text-[10px] font-light">(16-fine)</span></th>
-                            <th class="gotham-medium text-base border-l border-white/10">Intero Mese <br><span class="opacity-50 text-[10px] font-light">(01-fine)</span></th>
+                            <th class="gotham-medium text-sm md:text-base">Mese</th>
+                            <th class="gotham-medium text-sm md:text-base border-l border-white/10">1ª Quindicina <br><span class="opacity-60 text-[9px] font-light">(01-15)</span></th>
+                            <th class="gotham-medium text-sm md:text-base border-l border-white/10">2ª Quindicina <br><span class="opacity-60 text-[9px] font-light">(16-fine)</span></th>
+                            <th class="gotham-medium text-sm md:text-base border-l border-white/10">Intero Mese <br><span class="opacity-60 text-[9px] font-light">(01-fine)</span></th>
                         </tr>
                     </thead>
                     <tbody class="gotham-book">
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="gotham-bold text-xl py-12 px-10 text-left">Maggio</td>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="gotham-bold text-lg md:text-xl py-8 px-6 text-left">Maggio</td>
                             <td class="text-[#72A0C1] font-medium border-l">€ 1.100</td>
                             <td class="text-[#72A0C1] font-medium border-l">€ 1.200</td>
-                            <td class="gotham-bold text-2xl text-[#1A365D] border-l bg-blue-50/20">€ 1.900</td>
+                            <td class="gotham-bold text-xl md:text-2xl text-[#1A365D] border-l bg-blue-50/30">€ 1.900</td>
                         </tr>
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="gotham-bold text-xl py-12 px-10 text-left">Giugno</td>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="gotham-bold text-lg md:text-xl py-8 px-6 text-left">Giugno</td>
                             <td class="text-[#72A0C1] font-medium border-l">€ 1.300</td>
                             <td class="text-[#72A0C1] font-medium border-l">€ 1.400</td>
-                            <td class="gotham-bold text-2xl text-[#1A365D] border-l bg-blue-50/20">€ 2.500</td>
+                            <td class="gotham-bold text-xl md:text-2xl text-[#1A365D] border-l bg-blue-50/30">€ 2.500</td>
                         </tr>
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="gotham-bold text-xl py-12 px-10 text-left">Luglio</td>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="gotham-bold text-lg md:text-xl py-8 px-6 text-left">Luglio</td>
                             <td class="text-[#72A0C1] font-medium border-l">€ 1.700</td>
                             <td class="text-[#72A0C1] font-medium border-l">€ 1.850</td>
-                            <td class="gotham-bold text-2xl text-[#1A365D] border-l bg-blue-50/20">€ 3.300</td>
+                            <td class="gotham-bold text-xl md:text-2xl text-[#1A365D] border-l bg-blue-50/30">€ 3.300</td>
                         </tr>
-                        <tr class="bg-gray-100/50">
-                            <td class="gotham-bold text-xl py-12 px-10 text-left opacity-30">Agosto</td>
+                        <tr class="bg-slate-100/50">
+                            <td class="gotham-bold text-lg md:text-xl py-8 px-6 text-left opacity-40">Agosto</td>
                             <td class="text-[#72A0C1] font-medium border-l">€ 2.500</td>
-                            <td class="italic text-gray-400 text-sm border-l uppercase tracking-widest">Esaurito</td>
-                            <td class="italic text-gray-400 text-sm border-l uppercase tracking-widest">Non Disp.</td>
+                            <td class="italic text-slate-400 text-xs border-l uppercase tracking-widest">Esaurito</td>
+                            <td class="italic text-slate-400 text-xs border-l uppercase tracking-widest">Non Disp.</td>
                         </tr>
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="gotham-bold text-xl py-12 px-10 text-left">Settembre</td>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="gotham-bold text-lg md:text-xl py-8 px-6 text-left">Settembre</td>
                             <td class="text-[#72A0C1] font-medium border-l">€ 1.550</td>
                             <td class="text-[#72A0C1] font-medium border-l">€ 1.450</td>
-                            <td class="gotham-bold text-2xl text-[#1A365D] border-l bg-blue-50/20">€ 2.850</td>
+                            <td class="gotham-bold text-xl md:text-2xl text-[#1A365D] border-l bg-blue-50/30">€ 2.850</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <p class="mt-12 text-center gotham-light text-2xl opacity-70 italic">Tutte le utenze e le spese accessorie sono già incluse nelle tariffe indicate.</p>
+            <p class="mt-8 text-center gotham-light text-lg md:text-2xl opacity-70 italic px-4">Tutte le utenze e le spese accessorie sono già incluse nelle tariffe indicate.</p>
         </div>
     </section>
 
-    <section class="bg-white py-40 border-t border-[#EADDCA]">
+    <!-- CONDIZIONI -->
+    <section class="bg-white border-t border-[#EADDCA]">
         <div class="section-container">
-            <div class="text-center mb-32">
-                <h2 class="gotham-bold text-4xl mb-4 text-[#1A365D]">Condizioni Locative</h2>
-                <p class="gotham-light opacity-50 uppercase tracking-widest text-[10px]">Dettagli essenziali per la prenotazione</p>
+            <div class="text-center mb-16 md:mb-32">
+                <h2 class="gotham-bold text-3xl md:text-4xl mb-4 text-[#1A365D]">Condizioni Locative</h2>
+                <p class="gotham-light opacity-50 uppercase tracking-widest text-[10px] md:text-xs">Dettagli essenziali per la prenotazione</p>
                 <div class="divider"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
+                <!-- CARD 1 -->
                 <div class="info-card">
-                    <h4 class="gotham-medium text-[#72A0C1] text-xl mb-12 tracking-[0.4em]">Comfort Inclusi</h4>
-                    <div class="space-y-10">
-                        <div class="flex gap-6 items-start">
+                    <h4 class="gotham-medium text-[#72A0C1] text-lg md:text-xl mb-8 md:mb-12 tracking-[0.2em] md:tracking-[0.4em] border-b border-[#EADDCA] pb-4">Comfort Inclusi</h4>
+                    <div class="space-y-8">
+                        <div class="flex gap-4 md:gap-6 items-start">
                             <div class="icon-circle shadow-sm shrink-0">
                                 <svg viewBox="0 0 24 24"><path d="M7 16a4 4 0 014-4h2a4 4 0 014 4v1a2 2 0 01-2 2H9a2 2 0 01-2-2v-1zM12 12V3m0 0l-3 3m3-3l3 3"></path></svg>
                             </div>
                             <div>
-                                <p class="gotham-bold text-lg mb-1">Doccia in Giardino</p>
-                                <p class="gotham-light text-lg opacity-70 leading-relaxed">Uso consentito della doccia esterna al rientro dalla spiaggia.</p>
+                                <p class="gotham-bold text-base md:text-lg mb-1">Doccia in Giardino</p>
+                                <p class="gotham-light text-base md:text-lg opacity-80">Uso consentito della doccia esterna al rientro dalla spiaggia.</p>
                             </div>
                         </div>
-                        <div class="flex gap-6 items-start">
+                        <div class="flex gap-4 md:gap-6 items-start">
                             <div class="icon-circle shadow-sm shrink-0">
                                 <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                             </div>
                             <div>
-                                <p class="gotham-bold text-lg mb-1">Massima Sicurezza</p>
-                                <p class="gotham-light text-lg opacity-70">Grate di protezione e zanzariere a tutte le finestre.</p>
+                                <p class="gotham-bold text-base md:text-lg mb-1">Massima Sicurezza</p>
+                                <p class="gotham-light text-base md:text-lg opacity-80">Grate di protezione e zanzariere a tutte le finestre.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- CARD 2 -->
                 <div class="info-card">
-                    <h4 class="gotham-medium text-[#72A0C1] text-xl mb-12 tracking-[0.4em]">Pagamenti</h4>
-                    <div class="space-y-10">
-                        <div class="flex gap-6 items-start">
+                    <h4 class="gotham-medium text-[#72A0C1] text-lg md:text-xl mb-8 md:mb-12 tracking-[0.2em] md:tracking-[0.4em] border-b border-[#EADDCA] pb-4">Pagamenti</h4>
+                    <div class="space-y-8">
+                        <div class="flex gap-4 md:gap-6 items-start">
                             <div class="icon-circle shadow-sm shrink-0">
                                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16 12l-4 4-4-4"/></svg>
                             </div>
                             <div>
-                                <p class="gotham-bold text-lg mb-1">Prenotazione</p>
-                                <p class="gotham-light text-lg opacity-70"><strong>Caparra</strong> alla conferma. <strong>Saldo</strong> all'arrivo alla consegna chiavi.</p>
+                                <p class="gotham-bold text-base md:text-lg mb-1">Prenotazione</p>
+                                <p class="gotham-light text-base md:text-lg opacity-80"><strong>Caparra</strong> alla conferma. <strong>Saldo</strong> all'arrivo alla consegna chiavi.</p>
                             </div>
                         </div>
-                        <div class="flex gap-6 items-start">
+                        <div class="flex gap-4 md:gap-6 items-start">
                             <div class="icon-circle shadow-sm shrink-0">
                                 <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             </div>
                             <div>
-                                <p class="gotham-bold text-lg mb-1">Cauzione</p>
-                                <p class="gotham-light text-lg opacity-70 leading-relaxed">Deposito cauzionale richiesto (restituito post-verifica locali).</p>
+                                <p class="gotham-bold text-base md:text-lg mb-1">Cauzione</p>
+                                <p class="gotham-light text-base md:text-lg opacity-80">Deposito cauzionale richiesto (restituito post-verifica locali).</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- CARD 3 -->
                 <div class="info-card">
-                    <h4 class="gotham-medium text-[#72A0C1] text-xl mb-12 tracking-[0.4em]">Orari & Regole</h4>
-                    <div class="space-y-10">
-                        <div class="flex gap-6 items-start">
+                    <h4 class="gotham-medium text-[#72A0C1] text-lg md:text-xl mb-8 md:mb-12 tracking-[0.2em] md:tracking-[0.4em] border-b border-[#EADDCA] pb-4">Orari & Regole</h4>
+                    <div class="space-y-8">
+                        <div class="flex gap-4 md:gap-6 items-start">
                             <div class="icon-circle shadow-sm shrink-0">
                                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                             </div>
                             <div>
-                                <p class="gotham-bold text-lg mb-1">Check-in / Out</p>
-                                <p class="gotham-light text-lg opacity-70">Ingresso: <strong>dalle 18:00</strong><br>Partenza: <strong>entro le 10:00</strong></p>
+                                <p class="gotham-bold text-base md:text-lg mb-1">Check-in / Out</p>
+                                <p class="gotham-light text-base md:text-lg opacity-80">Ingresso: <strong>dalle 18:00</strong><br>Partenza: <strong>entro le 10:00</strong></p>
                             </div>
                         </div>
-                        <div class="flex gap-6 items-start">
+                        <div class="flex gap-4 md:gap-6 items-start">
                             <div class="icon-circle shadow-sm shrink-0 !border-red-100">
-                                <svg viewBox="0 0 24 24" stroke="red"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                                <svg viewBox="0 0 24 24" stroke="#ef4444"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
                             </div>
                             <div>
-                                <p class="gotham-bold text-lg mb-1 text-red-500">Divieti</p>
-                                <p class="gotham-light text-lg opacity-70">Vietato fumare internamente. Animali non ammessi.</p>
+                                <p class="gotham-bold text-base md:text-lg mb-1 text-red-600">Divieti</p>
+                                <p class="gotham-light text-base md:text-lg opacity-80">Vietato fumare internamente. Animali non ammessi.</p>
                             </div>
                         </div>
-                        <div class="flex gap-6 items-start">
+                        <div class="flex gap-4 md:gap-6 items-start">
                             <div class="icon-circle shadow-sm shrink-0">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M3 10h10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9Z"/><path d="M3 13h10M17 3l4 18M15 17h6"/>
-                                </svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10h10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9Z"/><path d="M3 13h10M17 3l4 18M15 17h6"/></svg>
                             </div>
                             <div>
-                                <p class="gotham-bold text-lg mb-1">Pulizia finale <br><span class="italic lowercase text-[13px] font-normal opacity-70">da espletarsi alla consegna dell'immobile</span></p>
+                                <p class="gotham-bold text-base md:text-lg mb-1">Pulizia finale</p>
                                 <p class="gotham-medium text-2xl text-[#72A0C1]">90 €</p>
                             </div>
                         </div>
@@ -477,43 +480,44 @@
         </div>
     </section>
 
-    <footer class="bg-sand-texture py-40 border-t border-[#EADDCA]">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="gotham-bold text-3xl mb-24 text-[#1A365D] tracking-tighter">Inizia qui la tua vacanza</h2>
+    <!-- FOOTER -->
+    <footer class="bg-sand-texture border-t border-[#EADDCA] overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 py-16 md:py-32 text-center">
+            <h2 class="gotham-bold text-2xl md:text-3xl mb-12 md:mb-24 text-[#1A365D] tracking-tighter">Inizia qui la tua vacanza</h2>
             
-            <div class="flex flex-col gap-20 items-center">
-                <div class="space-y-4">
-                    <p class="gotham-medium text-5xl text-[#1A365D]">Michele DOMENICHIELLO</p>
-                    <p class="gotham-medium text-[10px] text-[#72A0C1] tracking-[1.2em] uppercase opacity-80">Contatto Proprietario</p>
+            <div class="flex flex-col gap-12 md:gap-20 items-center">
+                <div class="space-y-3">
+                    <p class="gotham-medium text-3xl md:text-5xl text-[#1A365D]">Michele DOMENICHIELLO</p>
+                    <p class="gotham-medium text-[9px] md:text-[10px] text-[#72A0C1] tracking-[0.5em] md:tracking-[1.2em] uppercase opacity-80">Contatto Proprietario</p>
                 </div>
 
-                <div class="flex flex-col md:flex-row gap-12 w-full justify-center">
-                    <a href="tel:+393286314825" class="bg-white/95 backdrop-blur px-16 py-12 border border-[#EADDCA] hover:border-[#72A0C1] transition-all group shadow-sm flex flex-col items-center">
+                <div class="flex flex-col md:flex-row gap-6 md:gap-12 w-full justify-center">
+                    <a href="tel:+393286314825" class="bg-white/95 backdrop-blur-sm p-8 md:p-12 border border-[#EADDCA] hover:border-[#72A0C1] transition-all group shadow-sm flex flex-col items-center rounded-sm">
                         <div class="flex items-center gap-3 mb-4">
                             <svg class="whatsapp-brand" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            <p class="gotham-medium text-[20px] opacity-40 uppercase tracking-widest">Cellulare/WhatsApp</p>
+                            <p class="gotham-medium text-[11px] opacity-60 uppercase tracking-widest">WhatsApp / Chiamata</p>
                         </div>
-                        <p class="gotham-bold text-2xl group-hover:text-[#72A0C1] tracking-wider transition-colors">+39 328/6314825</p>
+                        <p class="gotham-bold text-xl md:text-2xl group-hover:text-[#72A0C1] tracking-wider transition-colors">+39 328/6314825</p>
                     </a>
                     
-                    <a href="mailto:mdomenichiello@yahoo.it" class="bg-white/95 backdrop-blur px-16 py-12 border border-[#EADDCA] hover:border-[#72A0C1] transition-all group shadow-sm flex flex-col items-center">
+                    <a href="mailto:mdomenichiello@yahoo.it" class="bg-white/95 backdrop-blur-sm p-8 md:p-12 border border-[#EADDCA] hover:border-[#72A0C1] transition-all group shadow-sm flex flex-col items-center rounded-sm">
                         <div class="flex items-center gap-3 mb-4">
-                            <p class="gotham-medium text-[20px] opacity-40 uppercase tracking-widest text-center">Contatto Email</p>
+                            <p class="gotham-medium text-[11px] opacity-60 uppercase tracking-widest text-center">Contatto Email</p>
                         </div>
-                        <p class="gotham-bold text-2xl group-hover:text-[#72A0C1] tracking-wider transition-colors">mdomenichiello@yahoo.it</p>
+                        <p class="gotham-bold text-lg md:text-2xl group-hover:text-[#72A0C1] tracking-wider transition-colors break-all">mdomenichiello@yahoo.it</p>
                     </a>
                 </div>
 
-                <div class="pt-24 w-full max-w-2xl border-t border-[#EADDCA]/30">
-                    <p class="gotham-medium text-[33px] opacity-60 flex items-center justify-center gap-6 tracking-[0.3em]">
-                        <svg class="w-8 h-8 text-[#72A0C1]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        VIA MARE SPUMEGGIANTE 8/B • CASTELLANETA MARINA (TA)
+                <div class="pt-12 md:pt-24 w-full max-w-2xl border-t border-[#EADDCA]/30">
+                    <p class="gotham-medium text-xs md:text-[18px] opacity-70 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6 tracking-widest">
+                        <svg class="w-5 h-5 md:w-6 md:h-6 text-[#72A0C1]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        VIA MARE SPUMEGGIANTE 8/B <span class="hidden md:inline">•</span> CASTELLANETA MARINA (TA)
                     </p>
                 </div>
             </div>
             
-            <div class="mt-40 pt-16 border-t border-[#EADDCA] opacity-20">
-                <p class="gotham-medium text-[8px] tracking-[1.5em] uppercase">No Agenzie • No Telemarketing • Soggiorni Privati 2026</p>
+            <div class="mt-20 md:mt-40 pt-10 border-t border-[#EADDCA] opacity-30">
+                <p class="gotham-medium text-[7px] md:text-[8px] tracking-[0.8em] md:tracking-[1.5em] uppercase">No Agenzie • Soggiorni Privati 2026</p>
             </div>
         </div>
     </footer>
