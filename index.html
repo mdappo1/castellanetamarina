@@ -262,6 +262,7 @@
                 <p class="gotham-light opacity-50 uppercase tracking-widest text-lg md:text-2xl">Via Mare Spumeggiante</p>
                 <div class="divider"></div>
             </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
                 <div class="space-y-10 md:space-y-16">
                     <div class="flex gap-6 md:gap-10 items-center">
@@ -272,7 +273,15 @@
                         </div>
                     </div>
                     <div class="flex gap-6 md:gap-10 items-center">
-                        <svg class="icon-huge shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 12h18m-9-9v18M5 12a7 7 0 1 1 14 0 7 7 0 0 1-14 0z"></path><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+                        <svg class="icon-huge shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="1" />
+                            <line x1="12" y1="4" x2="12" y2="20" />
+                            <circle cx="12" cy="12" r="3" />
+                            <path d="M2 8h2.5a3.5 3.5 0 0 1 0 7H2" />
+                            <path d="M22 8h-2.5a3.5 3.5 0 0 0 0 7H22" />
+                            <rect x="2" y="10" width="4" height="4" />
+                            <rect x="18" y="10" width="4" height="4" />
+                        </svg>
                         <div>
                             <p class="gotham-bold text-xl md:text-2xl mb-1 md:mb-2">150 Metri: Campo Giochi</p>
                             <p class="gotham-book text-base md:text-lg text-[#72A0C1] font-medium uppercase">Area Pubblica Illuminata 24h/24h</p>
@@ -280,7 +289,9 @@
                         </div>
                     </div>
                     <div class="flex gap-6 md:gap-10 items-center">
-                        <svg class="icon-huge shrink-0" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                        <svg class="icon-huge shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M3 9l1 4h16l1-4M3 9h18M3 9L6 3h12l3 6M4 13v6a2 2 0 002 2h12a2 2 0 002-2v-6M9 13v4M15 13v4"/>
+                        </svg>
                         <div>
                             <p class="gotham-bold text-xl md:text-2xl mb-1 md:mb-2">350 Metri dal Centro</p>
                             <p class="gotham-book text-base md:text-lg opacity-70">Vicinanza a tutte le attività commerciali e locali del vivace centro.</p>
@@ -340,15 +351,40 @@
                         </tr>
                     </thead>
                     <tbody class="gotham-book">
-                        <tr><td class="gotham-bold py-8 text-left">Maggio</td><td>€ 1.100</td><td>€ 1.200</td><td class="bg-blue-50/20 gotham-bold">€ 1.900</td></tr>
-                        <tr><td class="gotham-bold py-8 text-left">Giugno</td><td>€ 1.300</td><td>€ 1.400</td><td class="bg-blue-50/20 gotham-bold">€ 2.500</td></tr>
-                        <tr><td class="gotham-bold py-8 text-left">Luglio</td><td>€ 1.700</td><td>€ 1.850</td><td class="bg-blue-50/20 gotham-bold">€ 3.300</td></tr>
-                        <tr class="opacity-40"><td class="gotham-bold py-8 text-left">Agosto</td><td>€ 2.500</td><td class="italic">Esaurito</td><td class="italic">Non Disp.</td></tr>
-                        <tr><td class="gotham-bold py-8 text-left">Settembre</td><td>€ 1.550</td><td>€ 1.450</td><td class="bg-blue-50/20 gotham-bold">€ 2.850</td></tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="gotham-bold text-lg md:text-xl py-8 md:py-12 px-6 md:px-10 text-left">Maggio</td>
+                            <td class="text-[#72A0C1] font-medium border-l">€ 1.100</td>
+                            <td class="text-[#72A0C1] font-medium border-l">€ 1.200</td>
+                            <td class="gotham-bold text-lg md:text-xl text-[#1A365D] border-l bg-blue-50/20">€ 1.900</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="gotham-bold text-lg md:text-xl py-8 md:py-12 px-6 md:px-10 text-left">Giugno</td>
+                            <td class="text-[#72A0C1] font-medium border-l">€ 1.300</td>
+                            <td class="text-[#72A0C1] font-medium border-l">€ 1.400</td>
+                            <td class="gotham-bold text-xl md:text-2xl text-[#1A365D] border-l bg-blue-50/20">€ 2.500</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="gotham-bold text-lg md:text-xl py-8 md:py-12 px-6 md:px-10 text-left">Luglio</td>
+                            <td class="text-[#72A0C1] font-medium border-l">€ 1.700</td>
+                            <td class="text-[#72A0C1] font-medium border-l">€ 1.850</td>
+                            <td class="gotham-bold text-xl md:text-2xl text-[#1A365D] border-l bg-blue-50/20">€ 3.300</td>
+                        </tr>
+                        <tr class="bg-gray-100/50">
+                            <td class="gotham-bold text-lg md:text-xl py-8 md:py-12 px-6 md:px-10 text-left opacity-30">Agosto</td>
+                            <td class="text-[#72A0C1] font-medium border-l">€ 2.500</td>
+                            <td class="italic text-gray-400 text-xs md:text-sm border-l uppercase tracking-widest">Esaurito</td>
+                            <td class="italic text-gray-400 text-xs md:text-sm border-l uppercase tracking-widest">Non Disp.</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="gotham-bold text-lg md:text-xl py-8 md:py-12 px-6 md:px-10 text-left">Settembre</td>
+                            <td class="text-[#72A0C1] font-medium border-l">€ 1.550</td>
+                            <td class="text-[#72A0C1] font-medium border-l">€ 1.450</td>
+                            <td class="gotham-bold text-xl md:text-2xl text-[#1A365D] border-l bg-blue-50/20">€ 2.850</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
-            <p class="mt-8 text-center gotham-light text-xl opacity-70 italic">Tutte le utenze e le spese accessorie sono incluse.</p>
+            <p class="mt-8 md:mt-12 text-center gotham-light text-xl md:text-2xl opacity-70 italic px-4">Tutte le utenze e le spese accessorie sono già incluse nelle tariffe indicate.</p>
         </div>
     </section>
 
@@ -356,22 +392,94 @@
         <div class="section-container">
             <div class="text-center mb-16 md:mb-32">
                 <h2 class="gotham-bold text-3xl md:text-4xl mb-4 text-[#1A365D]">Condizioni Locative</h2>
-                <p class="gotham-light opacity-50 uppercase tracking-widest text-[9px] md:text-[10px]">Dettagli essenziali</p>
+                <p class="gotham-light opacity-50 uppercase tracking-widest text-[9px] md:text-[10px]">Dettagli essenziali per la prenotazione</p>
                 <div class="divider"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="space-y-6 text-center">
-                    <h4 class="gotham-medium text-[#72A0C1]">Comfort</h4>
-                    <p class="gotham-book opacity-70">Doccia esterna al rientro dal mare. Zanzariere e grate di protezione ovunque.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                
+                <div class="info-card">
+                    <h4 class="gotham-medium text-[#72A0C1] text-lg md:text-xl mb-8 md:mb-12 tracking-[0.3em] md:tracking-[0.4em]">Comfort Inclusi</h4>
+                    <div class="space-y-8 md:space-y-10">
+                        <div class="flex gap-4 md:gap-6 items-start">
+                            <div class="icon-circle shadow-sm shrink-0">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 16a4 4 0 014-4h2a4 4 0 014 4v1a2 2 0 01-2 2H9a2 2 0 01-2-2v-1zM12 12V3m0 0l-3 3m3-3l3 3"/></svg>
+                            </div>
+                            <div>
+                                <p class="gotham-bold text-base md:text-lg mb-1">Comfort & Igiene</p>
+                                <p class="gotham-book text-base md:text-lg text-[#1A365D] font-medium uppercase leading-tight">Ambienti climatizzati e confortevoli</p>
+                                <p class="gotham-light text-base md:text-lg opacity-70 leading-relaxed">2 bagni, 2 cucine, 3 spazi doccia (inclusa esterna).</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 md:gap-6 items-start">
+                            <div class="icon-circle shadow-sm shrink-0">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                            </div>
+                            <div>
+                                <p class="gotham-bold text-base md:text-lg mb-1">Massima Sicurezza</p>
+                                <p class="gotham-light text-base md:text-lg opacity-70">Grate di protezione e zanzariere a tutte le finestre.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="space-y-6 text-center">
-                    <h4 class="gotham-medium text-[#72A0C1]">Pagamenti</h4>
-                    <p class="gotham-book opacity-70">Caparra alla conferma. Saldo e cauzione alla consegna chiavi.</p>
+
+                <div class="info-card">
+                    <h4 class="gotham-medium text-[#72A0C1] text-lg md:text-xl mb-8 md:mb-12 tracking-[0.3em] md:tracking-[0.4em]">Pagamenti</h4>
+                    <div class="space-y-8 md:space-y-10">
+                        <div class="flex gap-4 md:gap-6 items-start">
+                            <div class="icon-circle shadow-sm shrink-0">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M16 12l-4 4-4-4"/></svg>
+                            </div>
+                            <div>
+                                <p class="gotham-bold text-base md:text-lg mb-1">Prenotazione</p>
+                                <p class="gotham-light text-base md:text-lg opacity-70"><strong>Caparra</strong> alla conferma. <strong>Saldo</strong> all'arrivo alla consegna chiavi.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 md:gap-6 items-start">
+                            <div class="icon-circle shadow-sm shrink-0">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div>
+                                <p class="gotham-bold text-base md:text-lg mb-1">Cauzione</p>
+                                <p class="gotham-light text-base md:text-lg opacity-70 leading-relaxed">Deposito cauzionale richiesto (restituito post-verifica locali).</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="space-y-6 text-center">
-                    <h4 class="gotham-medium text-[#72A0C1]">Regole</h4>
-                    <p class="gotham-book opacity-70">Ingresso ore 18:00. Partenza ore 10:00. Vietato fumare e animali non ammessi.</p>
-                    <p class="gotham-bold text-[#72A0C1] mt-4">PULIZIA FINALE: 90€</p>
+
+                <div class="info-card">
+                    <h4 class="gotham-medium text-[#72A0C1] text-lg md:text-xl mb-8 md:mb-12 tracking-[0.3em] md:tracking-[0.4em]">Orari & Regole</h4>
+                    <div class="space-y-8 md:space-y-10">
+                        <div class="flex gap-4 md:gap-6 items-start">
+                            <div class="icon-circle shadow-sm shrink-0">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            </div>
+                            <div>
+                                <p class="gotham-bold text-base md:text-lg mb-1">Check-in / Out</p>
+                                <p class="gotham-light text-base md:text-lg opacity-70">Ingresso: <strong>dalle 18:00</strong><br>Partenza: <strong>entro le 10:00</strong></p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 md:gap-6 items-start">
+                            <div class="icon-circle shadow-sm shrink-0 !border-red-100">
+                                <svg viewBox="0 0 24 24" stroke="red" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                            </div>
+                            <div>
+                                <p class="gotham-bold text-base md:text-lg mb-1 text-red-500">Divieti</p>
+                                <p class="gotham-light text-base md:text-lg opacity-70">Vietato fumare internamente. Animali non ammessi.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 md:gap-6 items-start">
+                            <div class="icon-circle shadow-sm shrink-0">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 10h10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9Z"/><path d="M3 13h10M17 3l4 18M15 17h6"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="gotham-bold text-base md:text-lg mb-1">Pulizia finale <br><span class="italic lowercase text-[11px] md:text-[13px] font-normal opacity-70">da espletarsi alla consegna dell'immobile</span></p>
+                                <p class="gotham-medium text-xl md:text-2xl text-[#72A0C1]">90 €</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -393,11 +501,13 @@
                         <p class="gotham-medium text-[12px] opacity-40 uppercase mb-2">Chiama ora</p>
                         <p class="gotham-bold text-lg group-hover:text-[#72A0C1]">+39 328/6314825</p>
                     </a>
+                    
                     <a href="https://wa.me/393286314825" class="bg-white/95 backdrop-blur p-8 border border-[#EADDCA] hover:border-[#25D366] transition-all group shadow-sm flex flex-col items-center">
                         <svg class="whatsapp-brand mb-4" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                         <p class="gotham-medium text-[12px] opacity-40 uppercase mb-2">WhatsApp</p>
                         <p class="gotham-bold text-lg group-hover:text-[#25D366]">Scrivi Messaggio</p>
                     </a>
+                    
                     <a href="mailto:mdappo@yahoo.it" class="bg-white/95 backdrop-blur p-8 border border-[#EADDCA] hover:border-[#72A0C1] transition-all group shadow-sm flex flex-col items-center">
                         <svg class="w-8 h-8 mb-4 stroke-[#72A0C1]" viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                         <p class="gotham-medium text-[12px] opacity-40 uppercase mb-2">Email</p>
@@ -424,7 +534,7 @@
             </div>
             
             <div class="mt-20 md:mt-40 pt-12 border-t border-[#EADDCA] opacity-20">
-                <p class="gotham-medium text-[7px] tracking-[1.5em] uppercase text-center">Soggiorni Privati 2026</p>
+                <p class="gotham-medium text-[7px] tracking-[1.5em] uppercase text-center">No Agenzie • Soggiorni Privati 2026</p>
             </div>
         </div>
     </footer>
