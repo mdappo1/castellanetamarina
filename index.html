@@ -24,6 +24,8 @@
             margin: 0;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            user-select: none;
+            -webkit-user-select: none;
         }
 
         .gotham-bold { font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
@@ -75,6 +77,7 @@
             max-width: 100%;
             display: block;
             object-fit: cover;
+            pointer-events: none;
         }
 
         .photo-label {
@@ -135,8 +138,17 @@
             }
         }
     </style>
+
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function(e) {
+            if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 83)) {
+                return false;
+            }
+        };
+    </script>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
     <header class="min-h-[90vh] md:min-h-screen flex flex-col justify-center items-center text-center px-4 bg-sea-texture text-white">
         <div class="mb-12 md:mb-16">
@@ -170,10 +182,10 @@
                     <p>Affittasi a Castellaneta Marina splendida villetta con ingresso indipendente, recentemente ristrutturata e mantenuta in condizioni impeccabili di pulizia, pronta ad accogliervi per la vostra vacanza ideale.</p>
                     <p>Situata in <strong>Via Mare Spumeggiante (nei pressi del campo da basket)</strong>, gode di una posizione invidiabile: a soli <strong>350 mt (5 minuti a piedi)</strong> sia dallo splendido lungomare e dalle spiagge, sia dal vivace centro con tutti i servizi e locali commerciali.</p>
                     <p>La villetta, posta al secondo piano, offre <strong>6 comodi posti letto</strong> distribuiti in 3 accoglienti camere da letto.</p>
-                    <p>È completamente arredata con gusto ed è dotata di zanzariere, grate di protezione alle finestre e aria condizionata per il massimo comfort. Gli interni comprendono un bagno moderno, un luminoso tinello e una cucina funzionale.</p>
-                    <p class="bg-white/40 p-4 md:p-6 rounded-lg border-l-4 border-[#72A0C1] text-left">Per il divertimento di tutta la famiglia, a soli <strong>150 metri</strong> dalla villetta si trova un ampio <strong>campo giochi pubblico gratuito</strong>, perfettamente illuminato anche di notte. È un'area sicura e accessibile dove grandi e piccini possono divertirsi <strong>24 ore su 24, tutti i giorni</strong>.</p>
-                    <p>Il vero punto di forza è il <strong>magnifico terrazzo superiore</strong>, coperto e attrezzato con cucina dedicata e bagno con doccia calda: lo spazio ideale per pranzi e cene all’aperto con splendida vista mare.</p>
-                    <p>All’esterno, la proprietà dispone di un'area privata recintata ed esclusiva con spazio per <strong>un posto auto</strong> e una comoda <strong>doccia esterna in giardino</strong>, il cui utilizzo è consentito e consigliato al rientro dalla spiaggia.</p>
+                    <p>Ãˆ completamente arredata con gusto ed Ã¨ dotata di zanzariere, grate di protezione alle finestre e aria condizionata per il massimo comfort. Gli interni comprendono un bagno moderno, un luminoso tinello e una cucina funzionale.</p>
+                    <p class="bg-white/40 p-4 md:p-6 rounded-lg border-l-4 border-[#72A0C1] text-left">Per il divertimento di tutta la famiglia, a soli <strong>150 metri</strong> dalla villetta si trova un ampio <strong>campo giochi pubblico gratuito</strong>, perfettamente illuminato anche di notte. Ãˆ un'area sicura e accessibile dove grandi e piccini possono divertirsi <strong>24 ore su 24, tutti i giorni</strong>.</p>
+                    <p>Il vero punto di forza Ã¨ il <strong>magnifico terrazzo superiore</strong>, coperto e attrezzato con cucina dedicata e bagno con doccia calda: lo spazio ideale per pranzi e cene allâ€™aperto con splendida vista mare.</p>
+                    <p>Allâ€™esterno, la proprietÃ  dispone di un'area privata recintata ed esclusiva con spazio per <strong>un posto auto</strong> e una comoda <strong>doccia esterna in giardino</strong>, il cui utilizzo Ã¨ consentito e consigliato al rientro dalla spiaggia.</p>
                 </div>
             </div>
             <div class="photo-wrapper">
@@ -222,7 +234,7 @@
             <div class="max-w-3xl mx-auto text-center mb-16 md:mb-32">
                 <h2 class="gotham-medium text-3xl md:text-4xl mb-6 md:mb-8 text-[#EADDCA]">Terrazzo Panoramico</h2>
                 <div class="divider bg-white/20"></div>
-                <p class="gotham-light opacity-80 text-lg md:text-xl italic leading-relaxed">"80 metri quadri di libertà affacciati sullo Ionio."</p>
+                <p class="gotham-light opacity-80 text-lg md:text-xl italic leading-relaxed">"80 metri quadri di libertÃ  affacciati sullo Ionio."</p>
             </div>
             <div class="space-y-16 md:space-y-32">
                 <div class="photo-wrapper bg-white/5 border-white/5"><img src="12-terrazzo.jpg" alt="Terrazzo" class="photo-img"><div class="photo-label text-black">Vista Mare</div></div>
@@ -282,7 +294,7 @@
                         </svg>
                         <div>
                             <p class="gotham-bold text-xl md:text-2xl mb-1 md:mb-2">350 Metri dal Centro</p>
-                            <p class="gotham-book text-base md:text-lg opacity-70">Vicinanza a tutte le attività commerciali e locali del vivace centro.</p>
+                            <p class="gotham-book text-base md:text-lg opacity-70">Vicinanza a tutte le attivitÃ  commerciali e locali del vivace centro.</p>
                         </div>
                     </div>
                     <div class="flex gap-6 md:gap-10 items-center">
@@ -325,7 +337,7 @@
         <div class="section-container">
             <div class="text-center mb-12 md:mb-24 px-4">
                 <h2 class="gotham-bold text-3xl md:text-5xl mb-6 text-[#1A365D]">Tariffe Stagione 2026</h2>
-                <p class="gotham-medium text-[#72A0C1] tracking-[0.2em] md:tracking-[0.4em] text-[10px] md:text-sm uppercase">Trasparenza • Spese Incluse • Solo Privati</p>
+                <p class="gotham-medium text-[#72A0C1] tracking-[0.2em] md:tracking-[0.4em] text-[10px] md:text-sm uppercase">Trasparenza â€¢ Spese Incluse â€¢ Solo Privati</p>
                 <div class="divider"></div>
             </div>
             <div class="table-responsive-wrapper">
@@ -333,46 +345,46 @@
                     <thead>
                         <tr>
                             <th class="gotham-medium text-sm md:text-base">Mese</th>
-                            <th class="gotham-medium text-sm md:text-base border-l border-white/10">1ª Quindicina <br><span class="opacity-50 text-[10px] font-light">(01-15)</span></th>
-                            <th class="gotham-medium text-sm md:text-base border-l border-white/10">2ª Quindicina <br><span class="opacity-50 text-[10px] font-light">(16-fine)</span></th>
+                            <th class="gotham-medium text-sm md:text-base border-l border-white/10">1Âª Quindicina <br><span class="opacity-50 text-[10px] font-light">(01-15)</span></th>
+                            <th class="gotham-medium text-sm md:text-base border-l border-white/10">2Âª Quindicina <br><span class="opacity-50 text-[10px] font-light">(16-fine)</span></th>
                             <th class="gotham-medium text-sm md:text-base border-l border-white/10">Intero Mese <br><span class="opacity-50 text-[10px] font-light">(01-fine)</span></th>
                         </tr>
                     </thead>
                     <tbody class="gotham-book">
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="gotham-bold text-lg md:text-xl py-8 md:py-12 px-6 md:px-10 text-left">Maggio</td>
-                            <td class="text-[#72A0C1] font-medium border-l">€ 1.100</td>
-                            <td class="text-[#72A0C1] font-medium border-l">€ 1.200</td>
-                            <td class="gotham-bold text-lg md:text-xl text-[#1A365D] border-l bg-blue-50/20">€ 1.900</td>
+                            <td class="text-[#72A0C1] font-medium border-l">â‚¬ 1.100</td>
+                            <td class="text-[#72A0C1] font-medium border-l">â‚¬ 1.200</td>
+                            <td class="gotham-bold text-lg md:text-xl text-[#1A365D] border-l bg-blue-50/20">â‚¬ 1.900</td>
                         </tr>
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="gotham-bold text-lg md:text-xl py-8 md:py-12 px-6 md:px-10 text-left">Giugno</td>
-                            <td class="text-[#72A0C1] font-medium border-l">€ 1.300</td>
-                            <td class="text-[#72A0C1] font-medium border-l">€ 1.400</td>
-                            <td class="gotham-bold text-xl md:text-2xl text-[#1A365D] border-l bg-blue-50/20">€ 2.500</td>
+                            <td class="text-[#72A0C1] font-medium border-l">â‚¬ 1.300</td>
+                            <td class="text-[#72A0C1] font-medium border-l">â‚¬ 1.400</td>
+                            <td class="gotham-bold text-xl md:text-2xl text-[#1A365D] border-l bg-blue-50/20">â‚¬ 2.500</td>
                         </tr>
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="gotham-bold text-lg md:text-xl py-8 md:py-12 px-6 md:px-10 text-left">Luglio</td>
-                            <td class="text-[#72A0C1] font-medium border-l">€ 1.700</td>
-                            <td class="text-[#72A0C1] font-medium border-l">€ 1.850</td>
-                            <td class="gotham-bold text-xl md:text-2xl text-[#1A365D] border-l bg-blue-50/20">€ 3.300</td>
+                            <td class="text-[#72A0C1] font-medium border-l">â‚¬ 1.700</td>
+                            <td class="text-[#72A0C1] font-medium border-l">â‚¬ 1.850</td>
+                            <td class="gotham-bold text-xl md:text-2xl text-[#1A365D] border-l bg-blue-50/20">â‚¬ 3.300</td>
                         </tr>
                         <tr class="bg-gray-100/50">
                             <td class="gotham-bold text-lg md:text-xl py-8 md:py-12 px-6 md:px-10 text-left opacity-30">Agosto</td>
-                            <td class="text-[#72A0C1] font-medium border-l">€ 2.500</td>
-                            <td class="italic text-gray-400 text-xs md:text-sm border-l uppercase tracking-widest">Esaurito</td>
+                            <td class="text-[#72A0C1] font-medium border-l">â‚¬ 2.500</td>
+                            <td class="italic text-gray-400 text-xs md:text-sm border-l uppercase tracking-widest">Non Disp.</td>
                             <td class="italic text-gray-400 text-xs md:text-sm border-l uppercase tracking-widest">Non Disp.</td>
                         </tr>
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="gotham-bold text-lg md:text-xl py-8 md:py-12 px-6 md:px-10 text-left">Settembre</td>
-                            <td class="text-[#72A0C1] font-medium border-l">€ 1.550</td>
-                            <td class="text-[#72A0C1] font-medium border-l">€ 1.450</td>
-                            <td class="gotham-bold text-xl md:text-2xl text-[#1A365D] border-l bg-blue-50/20">€ 2.850</td>
+                            <td class="text-[#72A0C1] font-medium border-l">â‚¬ 1.450</td>
+                            <td class="text-[#72A0C1] font-medium border-l">â‚¬ 1.400</td>
+                            <td class="gotham-bold text-xl md:text-2xl text-[#1A365D] border-l bg-blue-50/20">â‚¬ 2.800</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <p class="mt-8 md:mt-12 text-center gotham-light text-xl md:text-2xl opacity-70 italic px-4">Tutte le utenze e le spese accessorie sono già incluse nelle tariffe indicate.</p>
+            <p class="mt-8 md:mt-12 text-center gotham-light text-xl md:text-2xl opacity-70 italic px-4">Tutte le utenze e le spese accessorie sono giÃ  incluse nelle tariffe indicate.*</p>
         </div>
     </section>
 
@@ -453,7 +465,7 @@
                             </div>
                             <div>
                                 <p class="gotham-bold text-base md:text-lg mb-1 text-red-500">Divieti</p>
-                                <p class="gotham-light text-base md:text-lg opacity-70">Vietato fumare internamente. Animali non ammessi.</p>
+                                <p class="gotham-light text-base md:text-lg opacity-70">Vietato fumare internamente.<br> Animali non ammessi.</p>
                             </div>
                         </div>
                         <div class="flex gap-4 md:gap-6 items-start">
@@ -463,8 +475,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <p class="gotham-bold text-base md:text-lg mb-1">Pulizia finale <br><span class="italic lowercase text-[11px] md:text-[13px] font-normal opacity-70">da espletarsi alla consegna dell'immobile</span></p>
-                                <p class="gotham-medium text-xl md:text-2xl text-[#72A0C1]">90 €</p>
+                                <p class="gotham-bold text-base md:text-lg mb-1">Pulizia finale <br><span class="italic lowercase text-[11px] md:text-[13px] font-normal opacity-70">*da espletarsi alla consegna dell'immobile</span></p>
+                                <p class="gotham-medium text-xl md:text-2xl text-[#72A0C1]">90 â‚¬</p>
                             </div>
                         </div>
                     </div>
@@ -480,7 +492,7 @@
             <div class="flex flex-col gap-12 md:gap-20 items-center">
                 <div class="space-y-4">
                     <p class="gotham-medium text-3xl md:text-5xl text-[#1A365D]">La casa di Grace</p>
-                    <p class="gotham-medium text-[8px] md:text-[10px] text-[#72A0C1] tracking-[0.8em] md:tracking-[1.2em] uppercase opacity-80">Contatto Proprietario</p>
+                    <p class="gotham-medium text-[8px] md:text-[10px] text-[#72A0C1] tracking-[0.8em] md:tracking-[1.2em] uppercase opacity-80">Contatto diretto</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
@@ -504,7 +516,7 @@
                 </div>
 
                 <div class="pt-16 md:pt-24 w-full max-w-2xl border-t border-[#EADDCA]/30 px-4">
-                    <a href="http://maps.google.com/?q=Via+Mare+Spumeggiante,+Castellaneta+Marina" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center group">
+                    <a href="https://maps.app.goo.gl/2gDJx8zXFb1wZaar6" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center group">
                         <div class="mb-6 transform group-hover:scale-110 transition-transform duration-300">
                             <svg width="72" height="72" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#4285F4"/>
@@ -512,7 +524,7 @@
                             </svg>
                         </div>
                         <span class="gotham-medium text-xl md:text-3xl text-[#1A365D] tracking-widest border-b-2 border-transparent group-hover:border-[#72A0C1] transition-all">
-                            Via Mare Spumeggiante • Castellaneta Marina
+                            Via Mare Spumeggiante â€¢ Castellaneta Marina
                         </span>
                         <p class="mt-8 gotham-bold text-[#72A0C1] text-xs md:text-sm tracking-[0.3em] bg-[#72A0C1]/10 px-8 py-4 rounded-full animate-pulse-custom shadow-md">
                             CLICCA SULL'INDIRIZZO PER APRIRE LA MAPPA
@@ -522,7 +534,7 @@
             </div>
             
             <div class="mt-20 md:mt-40 pt-12 border-t border-[#EADDCA] opacity-20">
-                <p class="gotham-medium text-[7px] tracking-[1.5em] uppercase text-center">No Agenzie • Soggiorni Privati 2026</p>
+                <p class="gotham-medium text-[7px] tracking-[1.5em] uppercase text-center">No Agenzie â€¢ Soggiorni Privati 2026</p>
             </div>
         </div>
     </footer>
